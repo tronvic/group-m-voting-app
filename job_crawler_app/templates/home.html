@@ -14,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
     <style>
-
         .josefin-sans{
           font-family: "Josefin Sans", sans-serif;
           font-optical-sizing: auto;
@@ -22,12 +21,39 @@
           font-style: normal;
 }
     </style>
+
+    <script>
+      tailwind.config = {
+        theme: {
+            extend: {
+            colors: {
+              "brand-blue": "#2490ef",
+              "brand-blue-light": "#ecf5fe",
+              "icon-black": "#0f1419",
+              "brand-gray": "#f7f9f9",
+              "reaction-color": "#516471",
+              "text-color": "#4c5a67",
+              "heading-color": "#182734"
+            },
+            fontFamily: {
+              "sans": ["inter", "sans-serif"]
+            }
+          },
+            screens: {
+                'phone':'500px',
+                'tablet': '640px',
+                'laptop': '1024px',
+                'desktop': '1280px',
+            },
+        }
+      }
+    </script>
 </head>
 <body class="h-screen flex flex-col justify-between ">
 <div class="flex flex-col gap-4">
     {#  Header  #}
     {#  Desktop Nav  #}
-    <div class="hidden md:flex gap-4 justify-between flex-wrap bg-gray-50 px-8 py-4 items-center">
+    <div class="hidden tablet:flex gap-4 justify-between flex-wrap bg-gray-50 px-8 py-4 items-center">
         <h1 class="text-2xl font-bold">Job Crawler</h1>
 
         <div class="flex gap-4 flex-wrap text-sm items-center ju text-gray-800 font-semibold">
@@ -44,7 +70,7 @@
         </div>
     </div>
     {#  Mobile Nav  #}
-    <div class="sm:flex sm:flex-col gap-4 sm:justify-start sm:items-start sm:flex-wrap bg-gray-50 px-8 py-4 items-center md:hidden relative ">
+    <div class="phone:flex phone:flex-col gap-4 phone:justify-start phone:items-start phone:flex-wrap bg-gray-50 px-8 py-4 items-center tablet:hidden relative ">
 
         <div class="absolute w-8 h-8 right-10 bg-white rounded p-1 text-red-400 hover:text-red-500">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
