@@ -7,10 +7,61 @@
     <meta charset="UTF-8">
     <title>Job Crawler</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    This is my project Nyang'auuu
 
-<h3 class="text-red-200"> Red 200</h3>
+    {#    Google Fonts   #}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <style>
+
+        .josefin-sans{
+          font-family: "Josefin Sans", sans-serif;
+          font-optical-sizing: auto;
+          font-weight:normal;
+          font-style: normal;
+}
+    </style>
+</head>
+<body class="h-screen flex flex-col justify-between ">
+<div class="flex flex-col gap-4">
+    {#  Header  #}
+    {#  Desktop Nav  #}
+    <div class="hidden md:flex gap-4 justify-between flex-wrap bg-gray-50 px-8 py-4 items-center">
+        <h1 class="text-2xl font-bold">Job Crawler</h1>
+
+        <div class="flex gap-4 flex-wrap text-sm items-center ju text-gray-800 font-semibold">
+            <p class="py-2 px-4 rounded border">Job History</p>
+            <p class="py-2 px-4 rounded border">Portfolio</p>
+            <p class="py-2 px-4 rounded border">Request A job</p>
+
+            {#      avatar      #}
+            <figure class="h-16 w-16 p-1 flex items-center border rounded-full">
+              <img src="https://images.unsplash.com/photo-1457449940276-e8deed18bfff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+                   class="rounded-full"
+                   alt="Profile Image" style="width:100%; height: 100%" >
+            </figure>
+        </div>
+    </div>
+    {#  Mobile Nav  #}
+
+    {#  Body slot  #}
+    <div class="text-gray-500 text-sm text-center">Welcome to Job Crawler Development</div>
+
+</div>
+
+
+{#  Footer  #}
+<div class="hidden md:flex gap-4 justify-between flex-wrap bg-gray-50 px-8 py-4 items-center">
+        <h1 class="text-2xl font-bold text-gray-400">Job Crawler</h1>
+        <div>
+            <p class="text-gray-400 text-sm "
+               title="Muasya Victor Github Account"
+            >copyright@<span class="text-blue-400 hover:text-blue-500">
+                    <a href="https://github.com/muasya-victor" class="cursor-pointer" target="_blank">muasya-victor</a>
+                </span>
+            </p>
+        </div>
+</div>
 </body>
 </html>
