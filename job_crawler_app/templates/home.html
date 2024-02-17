@@ -52,17 +52,17 @@
     <script src="{% static 'utils.js' %}"></script>
 
 </head>
-<body class="h-screen flex flex-col justify-between ">
+<body class="h-screen flex flex-col justify-between " onload="displayLinks()">
 <div class="flex flex-col gap-4">
     {#  Header  #}
-    {#  Desktop Nav  #}
-    <div class="hidden tablet:flex gap-4 justify-between flex-wrap bg-gray-50 px-8 py-4 items-center">
+    {#  Desktop Nav Begin  #}
+    <div class=" hidden tablet:flex gap-4 justify-between flex-wrap bg-gray-50 px-8 py-4 items-center">
         <h1 class="text-2xl font-bold">Job Crawler</h1>
 
         <div class="flex gap-4 flex-wrap text-sm items-center ju text-gray-800 font-semibold">
-            <p class="py-2 px-4 rounded border">Job History</p>
-            <p class="py-2 px-4 rounded border">Portfolio</p>
-            <p class="py-2 px-4 rounded border">Request A job</p>
+            <div class="navigation-bar flex flex-wrap gap-4">
+            {#   menu links go here   #}
+            </div>
 
             {#      avatar      #}
             <figure class="h-16 w-16 p-1 flex items-center border rounded-full">
@@ -72,8 +72,9 @@
             </figure>
         </div>
     </div>
-    {#  Mobile Nav  #}
-    <div class="min-h-16 phone:flex phone:flex-col gap-4 phone:justify-start phone:items-start phone:flex-wrap bg-gray-50 px-8 py-4 items-center tablet:hidden relative ">
+    {#  Desktop Nav Begin  #}
+    {#  Mobile Nav Begin #}
+    <div class=" min-h-16 phone:flex phone:flex-col gap-4 phone:justify-start phone:items-start phone:flex-wrap bg-gray-50 px-8 py-4 items-center tablet:hidden relative ">
 
         <button
                 id="mobile_menu"
@@ -87,9 +88,9 @@
 
         <div    id="menu_links"
                 class="hidden flex flex-col gap-4 flex-wrap text-sm items-start justify-start text-gray-800 font-semibold ">
-            <p class="py-1 rounded border-b cursor-pointer hover:text-blue-400 hover:p-2">Job History</p>
-
-
+            <div class="navigation-bar flex flex-col gap-4 ">
+            {#   menu links go here   #}
+            </div>
             {#      avatar      #}
             <figure class="h-16 w-16 p-1 flex items-center border rounded-full">
               <img src="https://images.unsplash.com/photo-1457449940276-e8deed18bfff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
@@ -98,11 +99,10 @@
             </figure>
         </div>
     </div>
-
-
-    {#  Body slot  #}
+    {#  Mobile Nav Begin #}
+    {#  Body slot  Begin#}
     <div class="text-gray-500 text-sm text-center">Welcome to Job Crawler Development</div>
-
+    {#  Body slot  Begin#}
 </div>
 
 
@@ -145,6 +145,30 @@
             menu_button.innerHTML= open_menu_icon
             menu_links_div.classList.add('hidden')
         }
+    }
+
+    let nav_links = [
+        {value: '', label: 'Job History'},
+        {value: '', label: 'Portfolio'},
+        {value: '', label: 'Request Job +'},
+    ]
+
+    function displayLinks (){
+        let navigation_bars = document.getElementsByClassName('navigation-bar')
+        nav_links.forEach((link_item)=>{
+            let link = document.createElement('a')
+            let text_node = document.createTextNode(link_item.label)
+            link.appendChild(text_node)
+
+            link.classList = "p-1 border-b cursor-pointer hover:text-blue-400 hover:p-2"
+
+            for (let i = 0; i < navigation_bars.length ; i++){
+                navigation_bars[i].appendChild(link.cloneNode(true))
+                console.log('happens')
+            }
+
+        })
+
     }
 
 </script>
