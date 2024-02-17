@@ -101,7 +101,9 @@
     </div>
     {#  Mobile Nav Begin #}
     {#  Body slot  Begin#}
-    <div class="text-gray-500 text-sm text-center">Welcome to Job Crawler Development</div>
+    {% block content %}
+
+    {% endblock %}
     {#  Body slot  Begin#}
 </div>
 
@@ -148,9 +150,10 @@
     }
 
     let nav_links = [
-        {value: '', label: 'Job History'},
-        {value: '', label: 'Portfolio'},
-        {value: '', label: 'Request Job +'},
+        {value: '/', label: 'Home'},
+        {value: '/history', label: 'Job History'},
+        {value: '/portfolio', label: 'Portfolio'},
+        {value: '/job-request', label: 'Request Job +'},
     ]
 
     function displayLinks (){
@@ -161,6 +164,7 @@
             link.appendChild(text_node)
 
             link.classList = "p-1 border-b cursor-pointer hover:text-blue-400"
+            link.href = link_item.value
 
             for (let i = 0; i < navigation_bars.length ; i++){
                 navigation_bars[i].appendChild(link.cloneNode(true))
