@@ -48,6 +48,9 @@
         }
       }
     </script>
+
+    <script src="{% static 'utils.js' %}"></script>
+
 </head>
 <body class="h-screen flex flex-col justify-between ">
 <div class="flex flex-col gap-4">
@@ -70,15 +73,20 @@
         </div>
     </div>
     {#  Mobile Nav  #}
-    <div class="phone:flex phone:flex-col gap-4 phone:justify-start phone:items-start phone:flex-wrap bg-gray-50 px-8 py-4 items-center tablet:hidden relative ">
+    <div class="min-h-16 phone:flex phone:flex-col gap-4 phone:justify-start phone:items-start phone:flex-wrap bg-gray-50 px-8 py-4 items-center tablet:hidden relative ">
 
-        <div class="absolute w-8 h-8 right-10 bg-white rounded p-1 text-red-400 hover:text-red-500">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        <button
+                id="mobile_menu"
+                onclick="toggleNav()"
+                class="absolute w-8 h-8 right-4 bg-white rounded p-1 text-gray-600 hover:text-red-500">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" ></path>
             </svg>
-        </div>
+        </button>
 
-        <div class="flex flex-col gap-4 flex-wrap text-sm items-start justify-start text-gray-800 font-semibold ">
+        <div    id="menu_links"
+                class="hidden flex flex-col gap-4 flex-wrap text-sm items-start justify-start text-gray-800 font-semibold ">
             <p class="py-1 rounded border-b cursor-pointer hover:text-blue-400 hover:p-2">Job History</p>
 
 
@@ -110,5 +118,35 @@
             </p>
         </div>
 </div>
+
+<script>
+    const menu_button = document.getElementById("mobile_menu")
+    const menu_links_div = document.getElementById("menu_links")
+    let is_menu_open = false
+
+    const close_icon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                 class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
+        </svg>`
+
+    const open_menu_icon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+    `
+
+    function toggleNav(){
+        is_menu_open = !is_menu_open
+
+        if (is_menu_open){
+            menu_button.innerHTML= close_icon
+            menu_links_div.classList.remove('hidden')
+        }else {
+            menu_button.innerHTML= open_menu_icon
+            menu_links_div.classList.add('hidden')
+        }
+    }
+
+</script>
 </body>
 </html>
