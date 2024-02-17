@@ -44,6 +44,27 @@
         </div>
     </div>
     {#  Mobile Nav  #}
+    <div class="sm:flex sm:flex-col gap-4 sm:justify-start sm:items-start sm:flex-wrap bg-gray-50 px-8 py-4 items-center md:hidden relative ">
+
+        <div class="absolute w-8 h-8 right-10 bg-white rounded p-1 text-red-400 hover:text-red-500">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </div>
+
+        <div class="flex flex-col gap-4 flex-wrap text-sm items-start justify-start text-gray-800 font-semibold ">
+            <p class="py-1 rounded border-b cursor-pointer hover:text-blue-400 hover:p-2">Job History</p>
+
+
+            {#      avatar      #}
+            <figure class="h-16 w-16 p-1 flex items-center border rounded-full">
+              <img src="https://images.unsplash.com/photo-1457449940276-e8deed18bfff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+                   class="rounded-full"
+                   alt="Profile Image" style="width:100%; height: 100%" >
+            </figure>
+        </div>
+    </div>
+
 
     {#  Body slot  #}
     <div class="text-gray-500 text-sm text-center">Welcome to Job Crawler Development</div>
@@ -52,7 +73,7 @@
 
 
 {#  Footer  #}
-<div class="hidden md:flex gap-4 justify-between flex-wrap bg-gray-50 px-8 py-4 items-center">
+<div class="flex gap-4 justify-between flex-wrap bg-gray-50 px-8 py-4 items-center">
         <h1 class="text-2xl font-bold text-gray-400">Job Crawler</h1>
         <div>
             <p class="text-gray-400 text-sm "
