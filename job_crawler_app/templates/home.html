@@ -56,7 +56,7 @@
 <div class="flex flex-col gap-4">
     {#  Header  #}
     {#  Desktop Nav Begin  #}
-    <div class=" hidden tablet:flex gap-4 justify-between flex-wrap bg-gray-50 px-8 py-4 items-center">
+    <div class=" hidden tablet:flex gap-4 justify-between flex-wrap bg-gray-50 px-8 py-2 items-center">
         <h1 class="text-2xl font-bold">Job Crawler</h1>
 
         <div class="flex gap-4 flex-wrap text-sm items-center ju text-gray-800 font-semibold">
@@ -65,7 +65,7 @@
             </div>
 
             {#      avatar      #}
-            <figure class="h-16 w-16 p-1 flex items-center border rounded-full">
+            <figure class="h-10 w-10 flex items-center border rounded-full">
               <img src="https://images.unsplash.com/photo-1457449940276-e8deed18bfff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
                    class="rounded-full"
                    alt="Profile Image" style="width:100%; height: 100%" >
@@ -109,7 +109,7 @@
 
 
 {#  Footer  #}
-<div class="flex gap-4 justify-between flex-wrap bg-gray-50 px-8 py-4 items-center">
+<div class="flex gap-4 justify-between flex-wrap bg-gray-50 px-8 py-2 items-center">
         <h1 class="text-2xl font-bold text-gray-400">Job Crawler</h1>
         <div>
             <p class="text-gray-400 text-sm "
@@ -163,7 +163,7 @@
             let text_node = document.createTextNode(link_item.label)
             link.appendChild(text_node)
 
-            link.classList = "p-1 border-b cursor-pointer hover:text-blue-400"
+            link.classList = "p-1 border-b cursor-pointer hover:text-blue-400 font-light"
             link.href = link_item.value
 
             for (let i = 0; i < navigation_bars.length ; i++){
