@@ -5,15 +5,16 @@ from django.template import loader
 
 # Create your views here.
 def index(request):
-    template = loader.get_template('pages/landing.html')
+    template = loader.get_template('home.html')
     return HttpResponse(template.render())
 
-def jobHistoryView(request):
-    template = loader.get_template('pages/job_history.html')
+def candidates(request):
+    template = loader.get_template('pages/candidates.html')
     return HttpResponse(template.render())
-def portfolioView(request):
-    template = loader.get_template('pages/portfolio.html')
+
+def castVote(request):
+    template = loader.get_template('pages/cast_vote.html')
     return HttpResponse(template.render())
-def requestJobView(request):
-    template = loader.get_template('pages/job_request.html')
+def results(request):
+    template = loader.get_template('pages/results.html')
     return HttpResponse(template.render())

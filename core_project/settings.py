@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'job_crawler_app',
+    'voting_app',
     'compressor'
 ]
 
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'core_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR, 'job_crawler_app/templates'],
+        'DIRS': [BASE_DIR, 'voting_app/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

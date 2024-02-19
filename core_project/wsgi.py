@@ -15,7 +15,7 @@ project_home = 'home/tron/job-crawler'
 if project_home not in sys.path:
     sys.path.insert(0, project_home)
 
-# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core_project.settings')
-os.environ = ['DJANGO_SETTINGS_MODULE', 'core_project.settings']
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core_project.settings')
+# os.environ = ['DJANGO_SETTINGS_MODULE', 'core_project.settings']
 
 application = get_wsgi_application()
