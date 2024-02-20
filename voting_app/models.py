@@ -25,3 +25,5 @@ class Vote(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     candidate = models.ForeignKey(Candidate, on_delete=models.CASCADE)
     voted_at = models.DateTimeField(auto_now_add=True)
+
+
