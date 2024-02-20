@@ -56,11 +56,11 @@
 <div class="flex flex-col gap-4">
     {#  Header  #}
     {#  Desktop Nav Begin  #}
-    <div class=" hidden tablet:flex gap-4 justify-between flex-wrap bg-gray-50 px-8 py-2 items-center">
-        <h1 class="text-2xl font-bold">Voting App</h1>
+    <div class="text-white hidden tablet:flex gap-4 justify-between flex-wrap bg-blue-400 px-8 py-2 items-center">
+        <h1 class="text-2xl font-bold ">Voting App</h1>
 
         <div class="flex gap-4 flex-wrap text-sm items-center ju text-gray-800 font-semibold">
-            <div class="navigation-bar flex flex-wrap gap-4">
+            <div class="navigation-bar flex flex-wrap gap-4 text-white">
             {#   menu links go here   #}
             </div>
 
@@ -151,8 +151,8 @@
     }
 
     let nav_links = [
-        {value: '/candidates', label: 'Candidates'},
-        {value: '/results', label: 'Results'},
+        {value: '/voting/vote', label: 'Candidates'},
+        {value: '/voting/results', label: 'Results'},
     ]
 
     function displayLinks (){
@@ -162,7 +162,7 @@
             let text_node = document.createTextNode(link_item.label)
             link.appendChild(text_node)
 
-            link.classList = "p-1 border-b cursor-pointer hover:text-blue-400 font-light"
+            link.classList = "p-1 border-b cursor-pointer hover:text-blue-800 font-light"
             link.href = link_item.value
 
             for (let i = 0; i < navigation_bars.length ; i++){
