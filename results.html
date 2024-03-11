@@ -1,0 +1,16 @@
+{% extends "home.html" %}
+
+{% block content %}
+<div class="container mx-auto">
+  <h2 class="text-2xl font-bold mb-4">Voting Results</h2>
+  <div>
+    <!-- Display voting results -->
+    {% for candidate, votes in results.items %}
+    <div class="mb-4">
+      <span>{{ candidate }}:</span>
+      <span>{{ votes }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
